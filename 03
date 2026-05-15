@@ -1,0 +1,26 @@
+matriz = []
+for i in range(5):
+    print(f"\nAluno {i+1}")
+
+    matricula = int(input("Número da matrícula: "))
+    media_provas = int(input("Média das provas: "))
+    media_trabalhos = int(input("Média dos trabalhos: "))
+
+    nota_final = media_provas + media_trabalhos
+
+    matriz.append([matricula, media_provas, media_trabalhos, nota_final])
+
+maior_nota = matriz[0][3]
+matricula_maior = matriz[0][0]
+
+for i in range(5):
+    if matriz[i][3] > maior_nota:
+        maior_nota = matriz[i][3]
+        matricula_maior = matriz[i][0]
+
+print("\nMatriz dos alunos:")
+for linha in matriz:
+    print(linha)
+
+print(f"\nMatrícula do aluno com maior nota final: {matricula_maior}")
+print(f"Maior nota final: {maior_nota}")
